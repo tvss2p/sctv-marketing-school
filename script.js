@@ -283,13 +283,13 @@ function answerQuiz(chapter, choice) {
   const quizState = state.currentQuiz[chapter];
   if (quizState.answered) return;
   quizState.answered = true;
-  
+
   const questions = quizData[chapter];
   const q = questions[quizState.index];
   const isCorrect = choice === q.correct;
-  
+
   if (isCorrect) quizState.score++;
-  
+
   // ボタンに正解/不正解の色をつける
   const buttons = document.querySelectorAll(`#quiz${chapter} .q-option`);
   buttons.forEach((btn, i) => {
@@ -297,13 +297,13 @@ function answerQuiz(chapter, choice) {
     if (i === q.correct) btn.classList.add('correct');
     else if (i === choice) btn.classList.add('wrong');
   });
-  
+
   // フィードバック表示
   const container = document.getElementById(`quiz${chapter}`);
   const fbClass = isCorrect ? 'correct-fb' : 'wrong-fb';
   const fbLabel = isCorrect ? '⭕ 正解！' : '❌ 残念...';
   const correctText = !isCorrect ? `<br><br><strong>正解：${q.options[q.correct]}</strong>` : '';
-  
+
   const fbHtml = `
     <div class="q-feedback ${fbClass}">
       <div class="q-feedback-label">${fbLabel}</div>
@@ -313,8 +313,14 @@ function answerQuiz(chapter, choice) {
       ${quizState.index + 1 < questions.length ? '次の問題へ →' : '結果を見る →'}
     </button>
   `;
-  
+
   container.querySelector('.quiz-question').insertAdjacentHTML('beforeend', fbHtml);
+
+  // 「次の問題へ」ボタンが見えるようにスクロール
+  setTimeout(() => {
+    const btn = container.querySelector('.q-next-btn');
+    if (btn) btn.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }, 100);
 }
 
 // 次の問題へ
@@ -323,6 +329,13 @@ function nextQuiz(chapter) {
   quizState.index++;
   quizState.answered = false;
   renderQuiz(chapter);
+
+  // 問題の先頭にスクロール（固定ヘッダー分オフセット）
+  setTimeout(() => {
+    const section = document.getElementById(`quiz${chapter}`).closest('.quiz-section');
+    const top = section.getBoundingClientRect().top + window.pageYOffset - 80;
+    window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+  }, 50);
 }
 
 // クイズ結果
@@ -367,6 +380,13 @@ function renderQuizResult(chapter) {
       <div>${retryBtn}</div>
     </div>
   `;
+
+  // 結果の先頭にスクロール
+  setTimeout(() => {
+    const section = container.closest('.quiz-section');
+    const top = section.getBoundingClientRect().top + window.pageYOffset - 80;
+    window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+  }, 50);
 }
 
 // 進捗の更新
