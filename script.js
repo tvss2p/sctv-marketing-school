@@ -445,13 +445,32 @@ function observeFadeIn() {
   els.forEach(el => observer.observe(el));
 }
 
+// ログイン処理
+function checkPassword() {
+  const input = document.getElementById('passwordInput').value;
+  const error = document.getElementById('loginError');
+  if (input === '2121') {
+    sessionStorage.setItem('sctvAuth', 'true');
+    document.getElementById('loginOverlay').style.display = 'none';
+  } else {
+    error.style.display = 'block';
+    document.getElementById('passwordInput').value = '';
+    document.getElementById('passwordInput').focus();
+  }
+}
+
 // 初期化
 document.addEventListener('DOMContentLoaded', () => {
+  // 認証チェック
+  if (sessionStorage.getItem('sctvAuth') === 'true') {
+    document.getElementById('loginOverlay').style.display = 'none';
+  }
+
   // クイズ初期化
   for (let i = 1; i <= 6; i++) {
     initQuiz(i);
   }
-  
+
   observeChapters();
   observeFadeIn();
 });

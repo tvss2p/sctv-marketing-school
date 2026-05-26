@@ -11,6 +11,23 @@
 </head>
 <body>
 
+<!-- ログインオーバーレイ -->
+<div id="loginOverlay" class="login-overlay">
+  <div class="login-box">
+    <div class="login-logo">
+      <span class="logo-mark">●</span>
+      <span class="login-logo-text">SCTV Marketing School</span>
+    </div>
+    <h2 class="login-title">社内学習サイト</h2>
+    <p class="login-sub">パスワードを入力してください</p>
+    <div class="login-form">
+      <input type="password" id="passwordInput" class="login-input" placeholder="パスワード" maxlength="20" onkeydown="if(event.key==='Enter')checkPassword()">
+      <button class="login-btn" onclick="checkPassword()">ログイン</button>
+    </div>
+    <div class="login-error" id="loginError">パスワードが違います</div>
+  </div>
+</div>
+
 <!-- 背景のグラデーションメッシュ -->
 <div class="bg-mesh">
   <div class="mesh-blob blob-1"></div>
