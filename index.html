@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>マーケティングのいろは | 佐野ケーブルテレビ 社内学習サイト</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Outfit:wght@300;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- 背景のグラデーションメッシュ -->
+<div class="bg-mesh">
+  <div class="mesh-blob blob-1"></div>
+  <div class="mesh-blob blob-2"></div>
+  <div class="mesh-blob blob-3"></div>
+</div>
+<div class="grain"></div>
+
+<!-- ヘッダー -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="logo">
+      <span class="logo-mark">●</span>
+      <span class="logo-text">SCTV Marketing School</span>
+    </div>
+    <nav class="progress-nav" id="progressNav">
+      <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+      <span class="progress-text"><span id="progressPercent">0</span>% 完了</span>
+    </nav>
+  </div>
+</header>
+
+<!-- ヒーローセクション -->
+<section class="hero" id="hero">
+  <div class="hero-tag">社内向け学習プログラム ・ 約60分</div>
+  <h1 class="hero-title">
+    <span class="title-line">マーケティングの</span>
+    <span class="title-line title-accent">いろは。</span>
+  </h1>
+  <p class="hero-sub">「なんとなく」を「わかる」に変える、<br>はじめてのマーケティング入門講座。</p>
+  <div class="hero-meta">
+    <div class="meta-item"><span class="meta-num">6</span><span class="meta-label">章</span></div>
+    <div class="meta-divider"></div>
+    <div class="meta-item"><span class="meta-num">60</span><span class="meta-label">分</span></div>
+    <div class="meta-divider"></div>
+    <div class="meta-item"><span class="meta-num">6</span><span class="meta-label">クイズ</span></div>
+  </div>
+  <button class="cta-btn" onclick="startLearning()">
+    <span>学習をはじめる</span>
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 12h14m-7-7l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+  <div class="scroll-hint">
+    <span>SCROLL</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- 章一覧 -->
+<section class="chapters-overview" id="chaptersOverview">
+  <div class="section-label">CURRICULUM</div>
+  <h2 class="section-title">全6章の構成</h2>
+  <div class="chapter-grid">
+    <a href="#chapter1" class="chapter-card" data-num="01">
+      <div class="card-num">01</div>
+      <h3>マーケティングって何？</h3>
+      <p>そもそも何を考える仕事なのか。基本のキから。</p>
+      <div class="card-time">約10分</div>
+    </a>
+    <a href="#chapter2" class="chapter-card" data-num="02">
+      <div class="card-num">02</div>
+      <h3>お客様を知る</h3>
+      <p>「誰に届けるか」を決めなければ何も始まらない。</p>
+      <div class="card-time">約10分</div>
+    </a>
+    <a href="#chapter3" class="chapter-card" data-num="03">
+      <div class="card-num">03</div>
+      <h3>選ばれる理由をつくる</h3>
+      <p>競合の中で、なぜうちが選ばれるのか。</p>
+      <div class="card-time">約10分</div>
+    </a>
+    <a href="#chapter4" class="chapter-card" data-num="04">
+      <div class="card-num">04</div>
+      <h3>メッセージを届ける</h3>
+      <p>SNS、CM、チラシ。何を、どう伝えるか。</p>
+      <div class="card-time">約10分</div>
+    </a>
+    <a href="#chapter5" class="chapter-card" data-num="05">
+      <div class="card-num">05</div>
+      <h3>数字で考える</h3>
+      <p>感覚ではなく、データで判断する力。</p>
+      <div class="card-time">約10分</div>
+    </a>
+    <a href="#chapter6" class="chapter-card" data-num="06">
+      <div class="card-num">06</div>
+      <h3>実践編：本気応援キャンペーン</h3>
+      <p>自社の事例で、学んだことを総ざらい。</p>
+      <div class="card-time">約10分</div>
+    </a>
+  </div>
+</section>
+
+<!-- 第1章 -->
+<section class="chapter" id="chapter1">
+  <div class="chapter-header">
+    <div class="chapter-number">CHAPTER 01</div>
+    <h2 class="chapter-title">マーケティングって何？</h2>
+    <p class="chapter-lead">難しそうな横文字ですが、本質はとてもシンプルです。</p>
+  </div>
+
+  <div class="chapter-content">
+    <div class="content-block">
+      <h3 class="block-title"><span class="title-no">1-1</span>マーケティングの定義</h3>
+      <p>マーケティングとは、ひとことで言うと<strong>「お客様に買ってもらえるしくみをつくること」</strong>です。</p>
+      <p>営業のように直接お客様に売り込むのではなく、<em>「お客様が自然に欲しいと思って選んでくれる」状態</em>をつくる活動のすべてを指します。</p>
+      
+      <div class="quote-box">
+        <div class="quote-mark">"</div>
+        <p>マーケティングの目的は、販売を不要にすることである。</p>
+        <div class="quote-author">— ピーター・ドラッカー（経営学者）</div>
+      </div>
+    </div>
+
+    <div class="content-block">
+      <h3 class="block-title"><span class="title-no">1-2</span>マーケティングの4つの要素（4P）</h3>
+      <p>マーケティングを考えるとき、基本となる4つの視点があります。これを「4P」と呼びます。</p>
+      <div class="p4-grid">
+        <div class="p4-card">
+          <div class="p4-letter">P</div>
+          <div class="p4-word">Product</div>
+          <div class="p4-jp">製品・サービス</div>
+          <p>何を提供するか。ケーブルテレビ、光ネット、固定電話など。</p>
+        </div>
+        <div class="p4-card">
+          <div class="p4-letter">P</div>
+          <div class="p4-word">Price</div>
+          <div class="p4-jp">価格</div>
+          <p>いくらで売るか。月額料金、キャンペーン割引など。</p>
+        </div>
+        <div class="p4-card">
+          <div class="p4-letter">P</div>
+          <div class="p4-word">Place</div>
+          <div class="p4-jp">流通・場所</div>
+          <p>どこで売るか。店舗、WEBサイト、訪問など。</p>
+        </div>
+        <div class="p4-card">
+          <div class="p4-letter">P</div>
+          <div class="p4-word">Promotion</div>
+          <div class="p4-jp">販促・告知</div>
+          <p>どう知ってもらうか。CM、SNS、チラシなど。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-block">
+      <h3 class="block-title"><span class="title-no">1-3</span>「売る」より「選ばれる」</h3>
+      <p>昔は、良いものを作れば売れる時代でした。しかし今は、選択肢が無数にあり、お客様は<strong>「どれを選んでいいかわからない」</strong>状態です。</p>
+      <p>だからこそ、私たちは<em>「なぜうちを選ぶべきか」</em>をお客様に伝え続ける必要があります。これがマーケティングのいちばん大事な考え方です。</p>
+      
+      <div class="insight-card">
+        <div class="insight-icon">💡</div>
+        <div class="insight-body">
+          <div class="insight-label">ここがポイント</div>
+          <p>佐野ケーブルテレビは「無料訪問サポート」という強みがあります。でも、それを知らない若い世代には「選択肢にすら入っていない」のが現状。<strong>知ってもらうこと</strong>が、マーケティングの最初の一歩なのです。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- クイズ1 -->
+  <div class="quiz-section" data-chapter="1">
+    <div class="quiz-header">
+      <div class="quiz-badge">QUIZ 01</div>
+      <h3>章末ゲーム：マーケティングの基本</h3>
+      <p>3問正解でクリア！</p>
+    </div>
+    <div class="quiz-container" id="quiz1"></div>
+  </div>
+</section>
+
+<!-- 第2章 -->
+<section class="chapter chapter-alt" id="chapter2">
+  <div class="chapter-header">
+    <div class="chapter-number">CHAPTER 02</div>
+    <h2 class="chapter-title">お客様を知る</h2>
+    <p class="chapter-lead">誰に届けたいのか。それが決まらないと、何も始まりません。</p>
+  </div>
+
+  <div class="chapter-content">
+    <div class="content-block">
+      <h3 class="block-title"><span class="title-no">2-1</span>「みんなに売る」は「誰にも売れない」</h3>
+      <p>「全世代に向けて売りたい」と考えると、メッセージはぼんやりして、結局誰にも刺さりません。</p>
+      <p>たとえば、ご高齢の方に響く「安心の訪問サポート」と、20代に響く「サクサクの10Gネット」では、伝え方も場所もまったく違います。</p>
+    </div>
+
+    <div class="content-block">
+      <h3 class="block-title"><span class="title-no">2-2</span>ターゲットとペルソナ</h3>
+      <p><strong>ターゲット</strong>とは、ざっくりとした客層のこと。<br><strong>ペルソナ</strong>とは、その中の「たった一人の具体的な人物像」のことです。</p>
+      <div class="persona-card">
+        <div class="persona-avatar">👩</div>
+        <div class="persona-body">
+          <div class="persona-label">ペルソナ例</div>
+          <h4>佐野市在住・32歳・2児のママ</h4>
+          <ul>
+            <li>共働きで、平日は時間に追われている</li>
+            <li>スマホでSNSやサブスクをよく見る</li>
+            <li>家のWi-Fiが遅くてイライラすることがある</li>
+            <li>口コミやレビューを大事にする</li>
+          </ul>
+        </div>
+      </div>
+      <p>このように<em>「実在しそうな一人」</em>を具体的に描くことで、その人に響く言葉や、その人がいる場所（SNSなど）が見えてきます。</p>
+    </div>
+
+    <div class="content-block">
+      <h3 class="block-title"><span class="title-no">2-3</span>お客様の「困りごと」から発想する</h3>
+      <p>商品の機能から考えるのではなく、<strong>お客様が普段どんなことに困っているか</strong>から発想します。</p>
+      <div class="problem-flow">
+        <div class="flow-item">
+          <div class="flow-num">1</div>
+          <div class="flow-content">
+            <h4>困りごと</h4>
+            <p>動画がよく止まる、Zoomが切れる</p>
+          </div>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-item">
+          <div class="flow-num">2</div>
+          <div class="flow-content">
+            <h4>本当の願い</h4>
+            <p>家でストレスなく過ごしたい</p>
+          </div>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-item">
+          <div class="flow-num">3</div>
+          <div class="flow-content">
+            <h4>提供価値</h4>
+            <p>高速・安定の光インターネット</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="quiz-section" data-chapter="2">
+    <div class="quiz-header">
+      <div class="quiz-badge">QUIZ 02</div>
+      <h3>章末ゲーム：お客様を知る</h3>
+      <p>3問正解でクリア！</p>
+    </div>
+    <div class="quiz-container" id="quiz2"></div>
+  </div>
+</section>
+
+<!-- 第3章 -->
+<section class="chapter" id="chapter3">
+  <div class="chapter-header">
+    <div class="chapter-number">CHAPTER 03</div>
+    <h2 class="chapter-title">選ばれる理由をつくる</h2>
+    <p class="chapter-lead">競合がたくさんいる中で、なぜ「うち」が選ばれるのか。</p>
+  </div>
+
+  <div class="chapter-content">
+    <div class="content-block">
+      <h3 class="block-title"><span class="title-no">3-1</span>ポジショニングという考え方</h3>
+      <p><strong>ポジショニング</strong>とは、お客様の頭の中で「うちはこういう会社だ」と覚えてもらうこと。</p>
+      <p>たとえば、ネット回線といえば──大手キャリア、格安ネット、地域ケーブル会社……それぞれ違うイメージで覚えられています。</p>
+      
+      <div class="position-map">
+        <div class="map-axis-y">高品質</div>
+        <div class="map-axis-y-bottom">低価格重視</div>
+        <div class="map-axis-x-left">大手</div>
+        <div class="map-axis-x-right">地域密着</div>
+        <div class="map-dot dot-a" style="top:25%;left:20%">大手キャリア</div>
+        <div class="map-dot dot-b" style="top:60%;left:30%">格安ネット</div>
+        <div class="map-dot dot-c sctv" style="top:30%;left:75%">佐野CATV</div>
+      </div>
+      <p class="map-caption">↑ 「高品質 × 地域密着」というポジションを取りに行く例</p>
+    </div>
+
+    <div class="content-block">
+      <h3 class="block-title"><span class="title-no">3-2</span>USP（独自の強み）を見つける</h3>
+      <p><strong>USP（Unique Selling Proposition）</strong>とは、「うちにしかない、他社が真似できない強み」のこと。</p>
+      <div class="usp-grid">
+        <div class="usp-card">
+          <div class="usp-icon">🏠</div>
+          <h4>無料訪問サポート</h4>
+          <p>困ったら直接お家に伺う安心感。大手にはない地域密着の強み。</p>
+        </div>
+        <div class="usp-card">
+          <div class="usp-icon">📍</div>
+          <h4>佐野市・地元の会社</h4>
+          <p>顔の見える関係。地域のことをいちばん知っている。</p>
+        </div>
+        <div class="usp-card">
+          <div class="usp-icon">⚡</div>
+          <h4>1G・10Gの高速回線</h4>
+          <p>「地域だから遅い」は過去の話。最新の通信品質を提供。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-block">
+      <h3 class="block-title"><span class="title-no">3-3</span>強みは「お客様の言葉」で語る</h3>
+      <p>「1Gbpsの光回線」と言われても、お客様にはピンときません。</p>
+      <p>同じことを伝えるなら──</p>
+      <div class="compare-box">
+        <div class="compare-bad">
+          <div class="compare-label">❌ 機能で語る</div>
+          <p>「下り最大1Gbpsの光ファイバー回線」</p>
+        </div>
+        <div class="compare-arrow">▶</div>
+        <div class="compare-good">
+          <div class="compare-label">⭕ 価値で語る</div>
+          <p>「家族みんなが同時に動画を見ても、止まらない」</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="quiz-section" data-chapter="3">
+    <div class="quiz-header">
+      <div class="quiz-badge">QUIZ 03</div>
+      <h3>章末ゲーム：選ばれる理由</h3>
+      <p>3問正解でクリア！</p>
+    </div>
+    <div class="quiz-container" id="quiz3"></div>
+  </div>
+</section>
+
+<!-- 第4章 -->
+<section class="chapter chapter-alt" id="chapter4">
+  <div class="chapter-header">
+    <div class="chapter-number">CHAPTER 04</div>
+    <h2 class="chapter-title">メッセージを届ける</h2>
+    <p class="chapter-lead">SNS、CM、チラシ。「何を」「どこで」「どう」伝えるか。</p>
+  </div>
+
+  <div class="chapter-content">
+    <div class="content-block">
+      <h3 class="block-title"><span class="title-no">4-1</span>SNSに動画を投稿する意味</h3>
+      <p>「うちもSNSやってる」だけでは意味がありません。SNSは<strong>「知らない人に知ってもらう」</strong>ための最強のツールです。</p>
+      <div class="reason-list">
+        <div class="reason-item">
+          <div class="reason-num">①</div>
+          <div>
+            <h4>若い世代と接点をつくる</h4>
+            <p>テレビCMを見ない世代に届く、ほぼ唯一の手段。</p>
+          </div>
+        </div>
+        <div class="reason-item">
+          <div class="reason-num">②</div>
+          <div>
+            <h4>「人柄」が伝わる</h4>
+            <p>ダンス動画や社員出演で、親しみと安心感をつくる。</p>
+          </div>
+        </div>
+        <div class="reason-item">
+          <div class="reason-num">③</div>
+          <div>
+            <h4>低コストで何度も試せる</h4>
+            <p>テレビCMと違って、反応を見ながら改善できる。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-block">
+      <h3 class="block-title"><span class="title-no">4-2</span>AIDMA（アイドマ）の法則</h3>
+      <p>お客様が商品を知って契約するまでには、段階があります。これを表したのが<strong>AIDMA</strong>です。</p>
+      <div class="aidma-flow">
+        <div class="aidma-step"><div class="aidma-letter">A</div><div class="aidma-name">Attention</div><div class="aidma-jp">注意・認知</div><p>SNS動画で「あ、こんな会社あるんだ」</p></div>
+        <div class="aidma-step"><div class="aidma-letter">I</div><div class="aidma-name">Interest</div><div class="aidma-jp">興味</div><p>CMを見て「ちょっと気になる」</p></div>
+        <div class="aidma-step"><div class="aidma-letter">D</div><div class="aidma-name">Desire</div><div class="aidma-jp">欲求</div><p>LPサイトで「うちでも使えるかも」</p></div>
+        <div class="aidma-step"><div class="aidma-letter">M</div><div class="aidma-name">Memory</div><div class="aidma-jp">記憶</div><p>キャンペーンで「お得なうちに」</p></div>
+        <div class="aidma-step"><div class="aidma-letter">A</div><div class="aidma-name">Action</div><div class="aidma-jp">行動</div><p>申し込み</p></div>
+      </div>
+      <p>SNS・CM・LP・キャンペーンは、それぞれ違う段階を担当しています。ひとつだけでは成立しません。</p>
+    </div>
+
+    <div class="content-block">
+      <h3 class="block-title"><span class="title-no">4-3</span>感情を動かす伝え方</h3>
+      <p>人は「論理」では納得しても、「感情」で動きます。<strong>「これ、私のことだ」</strong>と思ってもらえれば、メッセージは深く届きます。</p>
+      <div class="emotion-card">
+        <div class="emotion-mark">♡</div>
+        <p>佐野ケーブルテレビの新CMは、まさにこの考え方。<br>
+          「子育てに疲れたママ」「本気でゲームする男子」「号泣して映画を見る女性」──<br>
+          ひとつでも自分に重なるシーンがあれば、お客様は<em>「この会社、わかってくれてる」</em>と感じます。</p>
+      </div>
+    </div>
+
+    <div class="content-block">
+      <h3 class="block-title"><span class="title-no">4-4</span>チラシ・CMを作るときの3つの問い</h3>
+      <p>制作物を作る前に、必ず自問してください。</p>
+      <div class="three-q">
+        <div class="q-item"><div class="q-no">Q1</div><p><strong>誰に</strong>届けたい？（ターゲット）</p></div>
+        <div class="q-item"><div class="q-no">Q2</div><p><strong>何を</strong>感じてほしい？（メッセージ）</p></div>
+        <div class="q-item"><div class="q-no">Q3</div><p>その後<strong>何をしてほしい？</strong>（行動）</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="quiz-section" data-chapter="4">
+    <div class="quiz-header">
+      <div class="quiz-badge">QUIZ 04</div>
+      <h3>章末ゲーム：メッセージを届ける</h3>
+      <p>3問正解でクリア！</p>
+    </div>
+    <div class="quiz-container" id="quiz4"></div>
+  </div>
+</section>
+
+<!-- 第5章 -->
+<section class="chapter" id="chapter5">
+  <div class="chapter-header">
+    <div class="chapter-number">CHAPTER 05</div>
+    <h2 class="chapter-title">数字で考える</h2>
+    <p class="chapter-lead">感覚ではなく、データで判断する。マーケターの必須スキル。</p>
+  </div>
+
+  <div class="chapter-content">
+    <div class="content-block">
+      <h3 class="block-title"><span class="title-no">5-1</span>KPI と KGI</h3>
+      <p><strong>KGI（最終目標）</strong>と<strong>KPI（中間目標）</strong>を分けて考えます。</p>
+      <div class="kpi-tree">
+        <div class="kgi-box">
+          <div class="kpi-label">KGI（最終目標）</div>
+          <div class="kpi-value">新規申込100件 / 月</div>
+        </div>
+        <div class="kpi-arrow">⬇</div>
+        <div class="kpi-row">
+          <div class="kpi-box"><div class="kpi-label">KPI</div><div class="kpi-value">LP訪問数<br>10,000</div></div>
+          <div class="kpi-box"><div class="kpi-label">KPI</div><div class="kpi-value">SNS再生数<br>50,000</div></div>
+          <div class="kpi-box"><div class="kpi-label">KPI</div><div class="kpi-value">問合せ数<br>300</div></div>
+        </div>
+      </div>
+      <p>KGIだけを見ていても、何を改善すべきかわかりません。<em>「途中の数字」</em>を追うことで、どこに問題があるかが見えてきます。</p>
+    </div>
+
+    <div class="content-block">
+      <h3 class="block-title"><span class="title-no">5-2</span>ファネル（漏斗）の考え方</h3>
+      <p>お客様は<strong>「知る → 興味を持つ → 検討する → 申込む」</strong>と段階的に減っていきます。これを漏斗に見立てたのが<strong>ファネル</strong>です。</p>
+      <div class="funnel">
+        <div class="funnel-layer layer-1"><span>SNSで知る</span><b>50,000人</b></div>
+        <div class="funnel-layer layer-2"><span>LPに訪問</span><b>10,000人</b></div>
+        <div class="funnel-layer layer-3"><span>申込み検討</span><b>500人</b></div>
+        <div class="funnel-layer layer-4"><span>申込み完了</span><b>100人</b></div>
+      </div>
+      <p>「どこで離脱しているか」を見て、そこを改善するのがマーケティングの基本です。</p>
+    </div>
+
+    <div class="content-block">
+      <h3 class="block-title"><span class="title-no">5-3</span>PDCA サイクル</h3>
+      <p>マーケティングに「一発成功」はありません。<strong>試して、測って、改善する</strong>を繰り返します。</p>
+      <div class="pdca-wheel">
+        <div class="pdca-item p"><div class="pdca-letter">P</div><div>Plan<br><small>計画</small></div></div>
+        <div class="pdca-item d"><div class="pdca-letter">D</div><div>Do<br><small>実行</small></div></div>
+        <div class="pdca-item c"><div class="pdca-letter">C</div><div>Check<br><small>検証</small></div></div>
+        <div class="pdca-item a"><div class="pdca-letter">A</div><div>Action<br><small>改善</small></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="quiz-section" data-chapter="5">
+    <div class="quiz-header">
+      <div class="quiz-badge">QUIZ 05</div>
+      <h3>章末ゲーム：数字で考える</h3>
+      <p>3問正解でクリア！</p>
+    </div>
+    <div class="quiz-container" id="quiz5"></div>
+  </div>
+</section>
+
+<!-- 第6章 -->
+<section class="chapter chapter-alt" id="chapter6">
+  <div class="chapter-header">
+    <div class="chapter-number">CHAPTER 06</div>
+    <h2 class="chapter-title">実践編：本気応援キャンペーン</h2>
+    <p class="chapter-lead">自社の事例で、学んだことを総ざらいしましょう。</p>
+  </div>
+
+  <div class="chapter-content">
+    <div class="content-block">
+      <h3 class="block-title"><span class="title-no">6-1</span>キャンペーンの全体像</h3>
+      <div class="campaign-overview">
+        <div class="campaign-headline">本気のあなたを応援する、佐野ケーブルテレビ。</div>
+        <div class="campaign-detail">
+          <div class="detail-item"><span class="detail-label">期間</span>2026年7月〜（予定）</div>
+          <div class="detail-item"><span class="detail-label">対象</span>新規1G・10G光ネット加入者</div>
+          <div class="detail-item"><span class="detail-label">特典</span>2万円キャッシュバック + 他社違約金最大2万円還元</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-block">
+      <h3 class="block-title"><span class="title-no">6-2</span>第1〜5章を当てはめてみよう</h3>
+      
+      <div class="apply-card">
+        <div class="apply-chapter">CHAPTER 01：マーケティングって何？</div>
+        <p>「無料訪問サポート」だけでは若い世代に届かない。<strong>知ってもらうしくみ</strong>として、SNS・CM・LPを総動員する。</p>
+      </div>
+
+      <div class="apply-card">
+        <div class="apply-chapter">CHAPTER 02：お客様を知る</div>
+        <p>ターゲットは<strong>「20〜40代・佐野市周辺の若年〜子育て世代」</strong>。CMに登場する人物像（子育てママ・学生・社会人）が、そのままペルソナになっている。</p>
+      </div>
+
+      <div class="apply-card">
+        <div class="apply-chapter">CHAPTER 03：選ばれる理由</div>
+        <p>USPは<strong>「地域密着 × 高品質（10G）× 安心サポート」</strong>。大手にはできない「顔の見える関係」を強みに。</p>
+      </div>
+
+      <div class="apply-card">
+        <div class="apply-chapter">CHAPTER 04：メッセージを届ける</div>
+        <p>「本気のあなたを応援する」という<strong>感情に訴えるメッセージ</strong>。CMで認知 → SNSで興味 → LPで詳細 → キャンペーンで申込み、というAIDMA設計。</p>
+      </div>
+
+      <div class="apply-card">
+        <div class="apply-chapter">CHAPTER 05：数字で考える</div>
+        <p>SNS再生数、LP訪問数、問合せ数、申込み数──<strong>段階ごとのKPI</strong>を設定し、どこを改善すべきかを見極める。</p>
+      </div>
+    </div>
+
+    <div class="content-block">
+      <h3 class="block-title"><span class="title-no">6-3</span>あなたができること</h3>
+      <p>マーケティングは、マーケティング担当者だけの仕事ではありません。</p>
+      <div class="action-grid">
+        <div class="action-card"><div class="action-emoji">📣</div><h4>自分のSNSでシェア</h4><p>身近な人に届けるのも立派なマーケティング。</p></div>
+        <div class="action-card"><div class="action-emoji">👂</div><h4>お客様の声を集める</h4><p>現場で聞いた一言が、次の施策のヒントに。</p></div>
+        <div class="action-card"><div class="action-emoji">💭</div><h4>「なぜ？」を考える</h4><p>このCMはなぜこの作り？を考える習慣を。</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="quiz-section" data-chapter="6">
+    <div class="quiz-header">
+      <div class="quiz-badge">FINAL QUIZ</div>
+      <h3>最終ゲーム：総合理解度チェック</h3>
+      <p>3問正解で修了！</p>
+    </div>
+    <div class="quiz-container" id="quiz6"></div>
+  </div>
+</section>
+
+<!-- 修了画面 -->
+<section class="completion" id="completion" style="display:none">
+  <div class="completion-inner">
+    <div class="completion-burst">🎉</div>
+    <div class="section-label">CONGRATULATIONS</div>
+    <h2 class="completion-title">受講完了！</h2>
+    <div class="completion-score">
+      <div class="score-label">あなたの総合スコア</div>
+      <div class="score-value"><span id="totalScore">0</span><span class="score-max"> / 18</span></div>
+      <div class="score-stars" id="scoreStars"></div>
+    </div>
+    <p class="completion-message" id="completionMessage"></p>
+    <button class="cta-btn" onclick="location.reload()">
+      <span>もう一度受講する</span>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M3 12a9 9 0 1 0 9-9m-9 0v6h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-text">SCTV Marketing School ・ 佐野ケーブルテレビ株式会社 社内学習プログラム</div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
