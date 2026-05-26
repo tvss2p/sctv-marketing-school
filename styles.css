@@ -892,6 +892,10 @@ body {
 .map-axis-x-left { left: 8px; top: 50%; transform: translateY(-50%); }
 .map-axis-x-right { right: 8px; top: 50%; transform: translateY(-50%); }
 
+.map-dot.dot-a { top: 25%; left: 20%; }
+.map-dot.dot-b { top: 60%; left: 30%; }
+.map-dot.dot-c { top: 12%; left: 82%; }
+
 .map-dot {
   position: absolute;
   padding: 8px 16px;
@@ -1827,9 +1831,10 @@ body {
   .aidma-letter { font-size: 28px; }
   .aidma-name { font-size: 11px; }
 
-  .position-map { height: 300px; padding: 20px; }
+  .position-map { height: 300px; padding: 20px; overflow: hidden; }
   .map-dot { font-size: 10px; padding: 5px 9px; }
   .map-dot.sctv { font-size: 11px; padding: 8px 12px; }
+  .map-dot.dot-c { top: 15%; left: 73%; }
   .map-axis-y, .map-axis-y-bottom, .map-axis-x-left, .map-axis-x-right { font-size: 10px; }
 
   .three-q { grid-template-columns: 1fr; gap: 12px; }
