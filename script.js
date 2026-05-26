@@ -465,33 +465,8 @@ function observeFadeIn() {
   els.forEach(el => observer.observe(el));
 }
 
-// 認証後の表示切り替え
-function showApp() {
-  document.getElementById('loginOverlay').style.display = 'none';
-  document.getElementById('mainContent').style.display = '';
-}
-
-// ログイン処理
-function checkPassword() {
-  const input = document.getElementById('passwordInput').value;
-  const error = document.getElementById('loginError');
-  if (input === '2121') {
-    sessionStorage.setItem('sctvAuth', 'true');
-    showApp();
-  } else {
-    error.style.display = 'block';
-    document.getElementById('passwordInput').value = '';
-    document.getElementById('passwordInput').focus();
-  }
-}
-
 // 初期化
 document.addEventListener('DOMContentLoaded', () => {
-  // 認証チェック
-  if (sessionStorage.getItem('sctvAuth') === 'true') {
-    showApp();
-  }
-
   // クイズ初期化
   for (let i = 1; i <= 6; i++) {
     initQuiz(i);

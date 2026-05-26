@@ -8,23 +8,122 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Outfit:wght@300;500;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css" />
+<style>
+/* ============ ログイン画面（インライン・外部CSSなしでも動作） ============ */
+*{box-sizing:border-box;margin:0;padding:0;}
+#loginOverlay{
+  position:fixed;inset:0;z-index:9999;
+  display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#1a0a10 0%,#2d1020 40%,#1a0800 100%);
+  overflow:hidden;
+}
+.l-blob{
+  position:absolute;border-radius:50%;filter:blur(90px);
+  opacity:0.5;pointer-events:none;
+}
+.l-blob-1{width:520px;height:520px;background:#ff6b1a;top:-15%;left:-10%;}
+.l-blob-2{width:420px;height:420px;background:#ff4d8d;bottom:-10%;right:-5%;}
+.l-blob-3{width:280px;height:280px;background:#ffc83d;top:55%;left:55%;}
+.l-card{
+  position:relative;z-index:1;
+  background:rgba(255,255,255,0.97);
+  border-radius:32px;
+  padding:56px 48px 48px;
+  width:100%;max-width:440px;margin:20px;
+  box-shadow:0 40px 100px rgba(0,0,0,0.5),0 0 0 1px rgba(255,255,255,0.1);
+  text-align:center;
+  animation:lFadeUp 0.7s cubic-bezier(.4,0,.2,1) backwards;
+}
+@keyframes lFadeUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
+.l-logo{
+  display:flex;align-items:center;justify-content:center;
+  gap:8px;margin-bottom:36px;
+}
+.l-logo-dot{
+  font-size:22px;
+  background:linear-gradient(135deg,#ff6b1a,#ff4d8d);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  animation:lPulse 2s infinite;
+}
+@keyframes lPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.2)}}
+.l-logo-name{
+  font-family:'Outfit','Zen Kaku Gothic New',sans-serif;
+  font-weight:700;font-size:15px;color:#3d2a25;letter-spacing:0.02em;
+}
+.l-eyebrow{
+  font-family:'Outfit',sans-serif;
+  font-size:12px;font-weight:700;letter-spacing:0.25em;
+  color:#ff6b1a;margin-bottom:12px;
+}
+.l-title{
+  font-family:'Outfit','Zen Kaku Gothic New',sans-serif;
+  font-weight:900;font-size:38px;letter-spacing:-0.03em;line-height:1.1;
+  margin-bottom:10px;
+  background:linear-gradient(135deg,#1a1015 0%,#e8520c 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.l-sub{
+  font-family:'Zen Kaku Gothic New',sans-serif;
+  font-size:14px;color:#8a7a6e;margin-bottom:36px;line-height:1.6;
+}
+.l-input{
+  display:block;width:100%;
+  padding:18px 20px;
+  border:2px solid #efe8e1;border-radius:14px;
+  font-family:'Outfit',sans-serif;font-size:22px;
+  text-align:center;letter-spacing:0.4em;
+  color:#1a1015;background:#faf7f4;outline:none;
+  transition:border-color .2s,background .2s,box-shadow .2s;
+  margin-bottom:12px;
+}
+.l-input:focus{
+  border-color:#ff8a3d;background:#fff;
+  box-shadow:0 0 0 4px rgba(255,107,26,0.12);
+}
+.l-btn{
+  display:block;width:100%;
+  padding:18px;
+  background:linear-gradient(120deg,#ff6b1a,#ff4d8d);
+  color:#fff;border:none;border-radius:14px;
+  font-family:'Outfit',sans-serif;
+  font-size:17px;font-weight:700;letter-spacing:0.05em;
+  cursor:pointer;
+  box-shadow:0 8px 28px rgba(255,107,26,0.4);
+  transition:transform .2s,box-shadow .2s;
+}
+.l-btn:hover{transform:translateY(-2px);box-shadow:0 14px 36px rgba(255,107,26,0.5);}
+.l-btn:active{transform:translateY(0);}
+.l-error{
+  display:none;margin-top:16px;
+  padding:11px 16px;
+  background:#fce4e4;border-radius:10px;
+  font-size:14px;color:#c0392b;font-weight:600;
+}
+@media(max-width:480px){
+  .l-card{padding:40px 24px 36px;}
+  .l-title{font-size:30px;}
+  .l-blob-3{display:none;}
+}
+</style>
 </head>
 <body>
 
-<!-- ログインオーバーレイ -->
-<div id="loginOverlay" class="login-overlay">
-  <div class="login-box">
-    <div class="login-logo">
-      <span class="logo-mark">●</span>
-      <span class="login-logo-text">SCTV Marketing School</span>
+<!-- ログイン画面 -->
+<div id="loginOverlay">
+  <div class="l-blob l-blob-1"></div>
+  <div class="l-blob l-blob-2"></div>
+  <div class="l-blob l-blob-3"></div>
+  <div class="l-card">
+    <div class="l-logo">
+      <span class="l-logo-dot">●</span>
+      <span class="l-logo-name">SCTV Marketing School</span>
     </div>
-    <h2 class="login-title">社内学習サイト</h2>
-    <p class="login-sub">パスワードを入力してください</p>
-    <div class="login-form">
-      <input type="password" id="passwordInput" class="login-input" placeholder="パスワード" maxlength="20" onkeydown="if(event.key==='Enter')checkPassword()">
-      <button class="login-btn" onclick="checkPassword()">ログイン</button>
-    </div>
-    <div class="login-error" id="loginError">パスワードが違います</div>
+    <div class="l-eyebrow">STAFF ONLY</div>
+    <h1 class="l-title">社内学習サイト</h1>
+    <p class="l-sub">ご利用にはパスワードが必要です。<br>担当者にお問い合わせください。</p>
+    <input type="password" id="passwordInput" class="l-input" placeholder="••••" maxlength="20">
+    <button class="l-btn" id="loginBtn">ログイン →</button>
+    <div class="l-error" id="loginError">パスワードが違います。もう一度お試しください。</div>
   </div>
 </div>
 
@@ -807,5 +906,48 @@
 </div><!-- /#mainContent -->
 
 <script src="script.js"></script>
+<script>
+// ログイン処理（インライン - 外部JSなしでも動作）
+(function() {
+  var PASS = '2121';
+
+  function showContent() {
+    var overlay = document.getElementById('loginOverlay');
+    var main = document.getElementById('mainContent');
+    if (overlay) overlay.style.display = 'none';
+    if (main) main.style.display = '';
+  }
+
+  window.checkPassword = function() {
+    var val = document.getElementById('passwordInput').value;
+    var err = document.getElementById('loginError');
+    if (val === PASS) {
+      try { sessionStorage.setItem('sctvAuth', 'true'); } catch(e) {}
+      showContent();
+    } else {
+      err.style.display = 'block';
+      document.getElementById('passwordInput').value = '';
+      document.getElementById('passwordInput').focus();
+    }
+  };
+
+  // Enterキー対応
+  var input = document.getElementById('passwordInput');
+  if (input) {
+    input.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') window.checkPassword();
+    });
+  }
+
+  // ボタン対応
+  var btn = document.getElementById('loginBtn');
+  if (btn) btn.addEventListener('click', window.checkPassword);
+
+  // セッション確認
+  try {
+    if (sessionStorage.getItem('sctvAuth') === 'true') showContent();
+  } catch(e) {}
+})();
+</script>
 </body>
 </html>
