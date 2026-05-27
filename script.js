@@ -474,4 +474,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   observeChapters();
   observeFadeIn();
+
+  // SCROLLインジケーターをスクロール時にフェードアウト
+  const scrollHint = document.querySelector('.scroll-hint');
+  if (scrollHint) {
+    scrollHint.style.transition = 'opacity 0.4s ease';
+    window.addEventListener('scroll', function() {
+      scrollHint.style.opacity = window.pageYOffset > 80 ? '0' : '1';
+      scrollHint.style.pointerEvents = window.pageYOffset > 80 ? 'none' : 'auto';
+    }, { passive: true });
+  }
 });
