@@ -403,7 +403,14 @@ function showCompletion() {
   const total = Object.values(state.scores).reduce((a, b) => a + b, 0);
   const maxScore = 18;
   
-  document.getElementById('totalScore').textContent = total;
+  const scoreMax = document.getElementById('scoreMax');
+  if (total === maxScore) {
+    document.getElementById('totalScore').textContent = '全問正解！満点！';
+    scoreMax.style.display = 'none';
+  } else {
+    document.getElementById('totalScore').textContent = `18問中${total}問正解`;
+    scoreMax.style.display = 'none';
+  }
   
   let stars, message;
   if (total >= 16) {
